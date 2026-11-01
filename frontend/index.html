@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThreatLens — AI-Powered URL Threat Detection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="logo" href="#" aria-label="ThreatLens home">
+      <div class="logo-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <span class="logo-wordmark">Threat<strong>Lens</strong></span>
+    </a>
+    <div class="nav-links" role="list">
+      <a href="#features" class="nav-link" role="listitem">Features</a>
+      <a href="#scanner" class="nav-link" role="listitem">Scanner</a>
+    </div>
+    <div class="nav-actions">
+      <div class="status-pill" aria-label="System status: operational">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>All systems operational</span>
+      </div>
+      <a href="#scanner" class="btn btn-primary nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Scan URL
+      </a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#features" class="mobile-nav-link">Features</a>
+    <a href="#scanner" class="mobile-nav-link">Scanner</a>
+    <a href="#scanner" class="btn btn-primary w-full mt-2">Scan URL</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <!-- Left column -->
+    <div class="hero-content">
+      <div class="hero-badge" aria-label="New feature announcement">
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span>29 ML signals · Real-time analysis</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <h1 class="hero-title" id="hero-title">
+        AI-Powered<br/>
+        <span class="hero-gradient">URL Security</span>
+      </h1>
+      <p class="hero-desc">
+        Detect threats before they reach users. Analyze suspicious URLs in milliseconds using machine learning and 29 real-time threat signals.
+      </p>
+      <div class="hero-actions">
+        <a href="#scanner" class="btn btn-primary btn-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Scan URL
+        </a>
+        <a href="#features" class="btn btn-ghost btn-lg">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          No account required
+        </div>
+        <div class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Instant results
+        </div>
+        <div class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Free forever
+        </div>
+      </div>
+    </div>
+    <!-- Right column: visual -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card-stack">
+        <div class="hcard hcard-main">
+          <div class="hcard-header">
+            <div class="hcard-icon hcard-icon-safe">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="hcard-label">Threat Analysis</div>
+              <div class="hcard-url">https://stripe.com/payments</div>
+            </div>
+            <span class="status-chip safe">Safe</span>
+          </div>
+          <div class="hcard-score-row">
+            <div class="hcard-score-info">
+              <span class="hcard-score-num">4.2%</span>
+              <span class="hcard-score-label">Risk Score</span>
+            </div>
+            <div class="hcard-ring-wrap">
+              <svg class="hcard-ring" viewBox="0 0 56 56">
+                <circle cx="28" cy="28" r="22" class="ring-track"/>
+                <circle cx="28" cy="28" r="22" class="ring-fill ring-fill-safe" style="stroke-dasharray:138.23;stroke-dashoffset:132.4"/>
+              </svg>
+              <span class="hcard-ring-pct">4%</span>
+            </div>
+          </div>
+          <div class="hcard-checks">
+            <div class="hcard-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>HTTPS Enabled</div>
+            <div class="hcard-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>No phishing keywords</div>
+            <div class="hcard-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Normal domain structure</div>
+          </div>
+        </div>
+        <div class="hcard hcard-float hcard-float-1">
+          <div class="hcard-float-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <span>AI Model Active</span>
+        </div>
+        <div class="hcard hcard-float hcard-float-2">
+          <span class="hf2-num">29</span>
+          <span class="hf2-label">Signals</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ METRICS ═══════════════════ -->
+<section class="metrics-section" aria-label="Platform metrics">
+  <div class="container">
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <span class="metric-num" data-target="29" data-suffix="+">29+</span>
+        <span class="metric-label">Signals Analyzed</span>
+      </div>
+      <div class="metric-divider" aria-hidden="true"></div>
+      <div class="metric-item">
+        <span class="metric-num" data-target="99.9" data-suffix="%" data-decimal="1">99.9%</span>
+        <span class="metric-label">Detection Accuracy</span>
+      </div>
+      <div class="metric-divider" aria-hidden="true"></div>
+      <div class="metric-item">
+        <span class="metric-num">&lt;1s</span>
+        <span class="metric-label">Response Time</span>
+      </div>
+      <div class="metric-divider" aria-hidden="true"></div>
+      <div class="metric-item">
+        <span class="metric-num" data-target="10" data-suffix="k+">10k+</span>
+        <span class="metric-label">URLs Scanned</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FEATURES ═══════════════════ -->
+<section class="features-section" id="features" aria-labelledby="features-title">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Features</div>
+      <h2 class="section-title" id="features-title">Everything you need to stay protected</h2>
+      <p class="section-desc">A complete threat intelligence suite powered by machine learning and built for the modern web.</p>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon-indigo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="feature-title">AI Threat Detection</h3>
+        <p class="feature-desc">Random forest ML model trained on millions of URLs with 99.9% accuracy across phishing, malware, and benign categories.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon-cyan">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="feature-title">Real-Time Analysis</h3>
+        <p class="feature-desc">Sub-second response times with live feature extraction. Get results before your users even have a chance to click.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon-violet">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3 class="feature-title">Explainable Predictions</h3>
+        <p class="feature-desc">Every decision is explained in plain English. Know exactly which signals triggered the prediction — no black boxes.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon-orange">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3 class="feature-title">Threat Intelligence</h3>
+        <p class="feature-desc">29 URL signals including entropy analysis, punycode detection, brand spoofing, suspicious TLDs, and phishing keywords.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon-green">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3 class="feature-title">Feature Analysis</h3>
+        <p class="feature-desc">Deep dive into every extracted signal — URL length, entropy, subdomains, digit ratios, and more — with visual indicators.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon-indigo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="feature-title">Scan History</h3>
+        <p class="feature-desc">Your last 10 scans are saved locally. Revisit past results and re-analyze URLs with a single click.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SCANNER ═══════════════════ -->
+<section class="scanner-section" id="scanner" aria-labelledby="scanner-title">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Scanner</div>
+      <h2 class="section-title" id="scanner-title">Analyze any URL instantly</h2>
+      <p class="section-desc">Paste a link below and our ML model will inspect 29 signals in milliseconds.</p>
+    </div>
+
+    <div class="scanner-module" role="search" aria-label="URL scanner">
+      <div class="scanner-input-row">
+        <div class="scanner-field-wrap" id="scannerFieldWrap">
+          <span class="scanner-field-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </span>
+          <input
+            type="url"
+            id="urlInput"
+            class="scanner-field"
+            placeholder="https://suspicious-site.com/login?verify=account"
+            aria-label="Enter a URL to scan"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <button class="btn btn-primary btn-scan" id="scanBtn" onclick="checkURL()" aria-label="Analyze URL for threats">
+          <span class="scan-btn-content">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            Analyze URL
+          </span>
+          <span class="scan-btn-loader" aria-hidden="true">
+            <span class="scan-spinner"></span>
+            <span id="scanStatusText">Analyzing…</span>
+          </span>
+        </button>
+      </div>
+      <div class="scanner-meta">
+        <span class="scanner-hint-text">Press <kbd>Enter</kbd> to scan</span>
+        <span class="scanner-hint-sep" aria-hidden="true">·</span>
+        <span class="scanner-hint-text">Results appear instantly</span>
+      </div>
+    </div>
+
+    <!-- Loading steps (visible during scan) -->
+    <div class="scan-progress" id="scanProgress" aria-live="polite" aria-hidden="true">
+      <div class="progress-steps">
+        <div class="progress-step" id="step1">
+          <div class="step-dot"></div>
+          <span>Checking domain…</span>
+        </div>
+        <div class="progress-step" id="step2">
+          <div class="step-dot"></div>
+          <span>Analyzing URL structure…</span>
+        </div>
+        <div class="progress-step" id="step3">
+          <div class="step-dot"></div>
+          <span>Inspecting phishing indicators…</span>
+        </div>
+        <div class="progress-step" id="step4">
+          <div class="step-dot"></div>
+          <span>Evaluating risk score…</span>
+        </div>
+        <div class="progress-step" id="step5">
+          <div class="step-dot"></div>
+          <span>Generating explanation…</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ RESULTS ═══════════════════ -->
+<section class="results-section" id="resultsArea" aria-live="polite" aria-atomic="false" aria-hidden="true">
+  <div class="container">
+
+    <!-- Result header row -->
+    <div class="result-header-row">
+      <div class="result-verdict-wrap">
+        <span class="result-verdict-badge" id="verdictBadge" aria-live="polite">—</span>
+        <div class="result-url-display" id="scannedUrl" aria-label="Scanned URL">—</div>
+      </div>
+      <div class="result-meta-pills">
+        <div class="meta-pill" id="httpsMetaPill">
+          <span class="meta-pill-key">HTTPS</span>
+          <span class="meta-pill-val" id="httpsVal">—</span>
+        </div>
+        <div class="meta-pill">
+          <span class="meta-pill-key">Risk Level</span>
+          <span class="meta-pill-val" id="riskLevelVal">—</span>
+        </div>
+        <div class="meta-pill">
+          <span class="meta-pill-key">Confidence</span>
+          <span class="meta-pill-val" id="confidenceVal">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main results grid -->
+    <div class="results-grid">
+
+      <!-- Risk Score card -->
+      <article class="result-card score-card" id="gaugeCard" aria-label="Risk score">
+        <div class="result-card-header">
+          <span class="result-card-label">Risk Score</span>
+        </div>
+        <div class="score-visual">
+          <div class="circular-progress-wrap">
+            <svg class="circular-progress" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="cp-track" cx="60" cy="60" r="50"/>
+              <circle class="cp-fill" id="cpFill" cx="60" cy="60" r="50" style="stroke-dasharray:314.16;stroke-dashoffset:314.16"/>
+            </svg>
+            <div class="cp-center">
+              <span class="cp-percent" id="gaugePercent" aria-label="Risk score percentage">0%</span>
+              <span class="cp-label">risk</span>
+            </div>
+          </div>
+          <div class="risk-bar-section">
+            <div class="risk-bar-track">
+              <div class="risk-bar-fill" id="riskBarFill"></div>
+            </div>
+            <div class="risk-bar-labels" aria-hidden="true">
+              <span>Safe</span><span>Suspicious</span><span>Malicious</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Verdict summary card -->
+      <article class="result-card verdict-card" id="verdictCard" aria-label="Scan verdict and summary">
+        <div class="result-card-header">
+          <span class="result-card-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Threat Analysis
+          </span>
+        </div>
+        <p class="verdict-summary" id="verdictSummary">Run a scan to see results here.</p>
+      </article>
+
+      <!-- AI Explanation card -->
+      <article class="result-card explanation-card" id="explanationsCard" aria-label="AI explanation">
+        <div class="result-card-header">
+          <span class="result-card-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            Why this prediction?
+          </span>
+        </div>
+        <ul class="explanation-list" id="explanationsList" aria-label="AI reasoning">
+          <li class="expl-placeholder">Scan a URL to see the AI's reasoning.</li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- Feature Analysis -->
+    <article class="result-card features-card" aria-label="Extracted URL features">
+      <div class="result-card-header">
+        <span class="result-card-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Feature Analysis
+        </span>
+        <span class="result-card-sub">29 URL signals extracted</span>
+      </div>
+      <div class="features-grid" id="featuresGrid" aria-label="URL feature values">
+        <div class="feat-placeholder">Feature values will appear after scanning.</div>
+      </div>
+    </article>
+
+    <!-- Recent Scans -->
+    <article class="result-card history-card" aria-label="Recent scan history">
+      <div class="result-card-header">
+        <span class="result-card-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Recent Scans
+        </span>
+        <button class="btn-ghost-sm clear-btn" id="clearHistoryBtn" onclick="clearHistory()" aria-label="Clear scan history">Clear history</button>
+      </div>
+      <div class="history-list" id="historyList" aria-label="Previous scans" role="list">
+        <div class="history-placeholder">Your last 10 scans will appear here.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="#" aria-label="ThreatLens home">
+          <div class="logo-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="logo-wordmark">Threat<strong>Lens</strong></span>
+        </a>
+        <p class="footer-tagline">AI-powered URL threat detection for the modern web.</p>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <div class="footer-col-title">Product</div>
+          <a href="#features" class="footer-link">Features</a>
+          <a href="#scanner" class="footer-link">Scanner</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Status</div>
+          <div class="footer-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span id="modelInfo">ML Model Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ThreatLens. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
